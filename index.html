@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Portfolio</title>
     <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
       * {
         margin: 0;
         padding: 0;
@@ -181,10 +184,14 @@
       }
 
       .hero h1 {
-        font-size: 5rem;
         margin-bottom: 1rem;
         line-height: 1.2;
         animation: fadeInUp 1s ease-out;
+          font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 1px;
+
       }
 
       @keyframes fadeInUp {
@@ -703,7 +710,7 @@
       }
 
       .about-title {
-      text-align: left;
+        text-align: left;
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
         background: linear-gradient(135deg, #ffffff, #c084fc);
@@ -778,13 +785,66 @@
       }
 
       .project-link {
-  text-decoration: none;
-  color: inherit;
-}
+        text-decoration: none;
+        color: inherit;
+      }
 
-.project-link:hover .project-card {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
+      .project-link:hover .project-card {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+
+      /* ---------- Responsive Navbar ---------- */
+      .menu-toggle {
+        display: none;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: color 0.3s;
+        z-index: 1001;
+      }
+
+      .menu-toggle:hover {
+        color: #c084fc;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          right: -100%;
+          width: 60%;
+          height: calc(100vh - 70px);
+          background: rgba(15, 15, 15, 0.95);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          transition: right 0.4s ease;
+        }
+
+        .nav-links.open {
+          right: 0;
+        }
+
+        .nav-links a {
+          font-size: 1.3rem;
+        }
+      }
+
+      @font-face {
+  font-family: "Maison Epoque Sans";
+  src: url("fonts/MaisonEpoqueSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
     </style>
@@ -792,6 +852,7 @@
   <body>
     <nav class="nav">
       <div class="logo">Portfolio</div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -872,60 +933,92 @@
     <section id="projects">
       <h2><span class="gradient-text">Featured Projects</span></h2>
       <div class="projects-grid">
-        <a href="https://www.behance.net/nehagurnalkar12" target="_blank" class="project-link">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="Desktop - 23.png" alt="Prime Kitchen Studios Project" />
-    </div>
-    <div class="project-content">
-      <h3>Prime Kitchen Studios</h3>
-      <p>
-        A modern website designed for a modular kitchen brand, showcasing elegant designs, seamless navigation, and a clean user experience.
-      </p>
-    </div>
-  </div>
-</a>
+        <a
+          href="https://www.behance.net/nehagurnalkar12"
+          target="_blank"
+          class="project-link"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="Desktop - 23.png" alt="Prime Kitchen Studios Project" />
+            </div>
+            <div class="project-content">
+              <h3>Prime Kitchen Studios</h3>
+              <p>
+                A modern website designed for a modular kitchen brand,
+                showcasing elegant designs, seamless navigation, and a clean
+                user experience.
+              </p>
+            </div>
+          </div>
+        </a>
 
-        <a href="https://www.behance.net/nehagurnalkar12" target="_blank" class="project-link">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="Desktop - 23 (4).png" alt="Prime Kitchen Studios Project" />
-    </div>
-    <div class="project-content">
-      <h3>E-commerce Website</h3>
-      <p>
-                A scalable e-commerce solution built for wholesale businesses, integrating efficient product management, secure transactions, and responsive design.
-      </p>
-    </div>
-  </div>
-</a>
-        <a href="https://www.behance.net/nehagurnalkar12" target="_blank" class="project-link">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="Desktop - 23 (5).png" alt="Prime Kitchen Studios Project" />
-    </div>
-    <div class="project-content">
-            <h3>Para Ella(Doctor)</h3>
-      <p>
-                A modern website for a gynecologist that celebrates the beauty and wellness of women while showcasing her expertise, services, and compassionate approach.
-      </p>
-    </div>
-  </div>
-</a>
+        <a
+          href="https://www.behance.net/nehagurnalkar12"
+          target="_blank"
+          class="project-link"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="Desktop - 23 (4).png"
+                alt="Prime Kitchen Studios Project"
+              />
+            </div>
+            <div class="project-content">
+              <h3>E-commerce Website</h3>
+              <p>
+                A scalable e-commerce solution built for wholesale businesses,
+                integrating efficient product management, secure transactions,
+                and responsive design.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          href="https://www.behance.net/nehagurnalkar12"
+          target="_blank"
+          class="project-link"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="Desktop - 23 (5).png"
+                alt="Prime Kitchen Studios Project"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Para Ella(Doctor)</h3>
+              <p>
+                A modern website for a gynecologist that celebrates the beauty
+                and wellness of women while showcasing her expertise, services,
+                and compassionate approach.
+              </p>
+            </div>
+          </div>
+        </a>
 
-         <a href="https://www.behance.net/nehagurnalkar12" target="_blank" class="project-link">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="Desktop - 23 (8).png" alt="Prime Kitchen Studios Project" />
-    </div>
-    <div class="project-content">
-            <h3>Flight Booking System</h3>
-      <p>
-                A modern web application designed to simplify flight search, booking, and management with a seamless user experience.
-      </p>
-    </div>
-  </div>
-</a>
+        <a
+          href="https://www.behance.net/nehagurnalkar12"
+          target="_blank"
+          class="project-link"
+        >
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="Desktop - 23 (8).png"
+                alt="Prime Kitchen Studios Project"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Flight Booking System</h3>
+              <p>
+                A modern web application designed to simplify flight search,
+                booking, and management with a seamless user experience.
+              </p>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -945,37 +1038,26 @@
 
     <section id="contact">
       <h2><span class="gradient-text">Get In Touch</span></h2>
-     <form
-  class="contact-form"
-  action="https://formspree.io/f/mvgwnbgz"
-  method="POST"
->
-  <div class="form-group">
-    <input
-      type="text"
-      name="name"
-      placeholder="Your Name"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <input
-      type="email"
-      name="email"
-      placeholder="Your Email"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <textarea
-      name="message"
-      placeholder="Your Message"
-      required
-    ></textarea>
-  </div>
-  <button type="submit" class="cta-button">Send Message</button>
-</form>
-
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/mvgwnbgz"
+        method="POST"
+      >
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
     </section>
 
     <footer>
@@ -1042,23 +1124,23 @@
       });
 
       // Form submission
-       const form = document.querySelector(".contact-form");
+      const form = document.querySelector(".contact-form");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { Accept: "application/json" },
-    });
-    if (response.ok) {
-      alert("Thank you! Your message has been sent.");
-      form.reset();
-    } else {
-      alert("Oops! Something went wrong. Please try again.");
-    }
-  });
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+        if (response.ok) {
+          alert("Thank you! Your message has been sent.");
+          form.reset();
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
+      });
 
       // Typing effect
       const typingText = document.querySelector(".typing-effect");
@@ -1066,7 +1148,6 @@
         "Creative Developer",
         "UI/UX Designer",
         "Problem Solver",
-        "Full Stack Developer",
       ];
       let textIndex = 0;
       let charIndex = 0;
@@ -1096,7 +1177,14 @@
 
       setTimeout(typeEffect, 1000);
 
+      // Mobile menu toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+});
 
     </script>
   </body>
